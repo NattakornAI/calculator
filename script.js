@@ -4,6 +4,7 @@ let simbro = ["+", "-", "x", "/"]
 let quiz = 0
 let count = 0
 let score = 0
+
 function open(){
     num1 = Math.floor(Math.random()*9+1)
     num2 = Math.floor(Math.random()*9+1)
@@ -19,7 +20,7 @@ function newquiz(){
         count++
     }
     if (quiz == 1){
-        if(answer == num1-+num2){
+        if(answer == num1-num2){
             score++
         }
         count++
@@ -35,10 +36,6 @@ function newquiz(){
         }
         count++
     }
-    makescore()
+    document.getElementById("score").innerHTML = "<p>Your score is " + score + " / " + count + "</p>"
     open()
-    
-}
-function makescore(){
-    document.getElementById("score").innerHTML = "<p>Your score is "+score+" / "+count+"</p>"
 }
